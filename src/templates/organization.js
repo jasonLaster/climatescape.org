@@ -17,7 +17,6 @@ import SEO from "../components/seo"
 import Carousel from "../components/carousel"
 import SidebarSectionList from "../components/SidebarSectionList"
 import { transformOrganization } from "../utils/airtable"
-import { parseTwitterPath, buildUrl } from "../utils/url"
 
 function isCapital(org) {
   return org.role?.includes("Capital")
@@ -91,8 +90,8 @@ function SocialLinksSection({ data, org }) {
         icon={<FontAwesomeIcon icon={faLinkedin} />}
       />
       <SidebarSectionList.Link
-        text={parseTwitterPath(org.twitter)}
-        href={buildUrl(org.twitter, "Twitter")}
+        text="Twitter"
+        href={org.twitter}
         icon={<FontAwesomeIcon icon={faTwitter} />}
       />
       <SidebarSectionList.Link
